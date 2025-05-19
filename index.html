@@ -1,0 +1,97 @@
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MemesHub</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo" id="logo">MemesHub</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-category="all">Все</a></li>
+                    <li><a href="#" class="nav-link" data-category="classic">Классика</a></li>
+                    <li><a href="#" class="nav-link" data-category="animals">Животные</a></li>
+                    <li><a href="#" class="nav-link" data-category="gaming">Гейминг</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="🔍 Поиск мемов...">
+            </div>
+        </header>
+        <main>
+            <section class="add-meme">
+                <button id="addMemeBtn">Добавить мем</button>
+            </section>
+            <section class="gallery" id="gallery"></section>
+            <div class="pagination" id="pagination"></div>
+        </main>
+        <footer>
+            <p>© 2025 MemesHub. Все права защищены.</p>
+        </footer>
+        <!-- Модальное окно для деталей мема -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close">×</span>
+                <img id="modalImage" src="" alt="Мем">
+                <label>Название:</label>
+                <input type="text" id="modalTitle">
+                <label>Описание:</label>
+                <textarea id="modalDescription" rows="3"></textarea>
+                <label>Источник:</label>
+                <textarea id="modalSource" rows="2"></textarea>
+                <div class="rating">
+                    <button id="likeBtn">👍</button>
+                    <span id="ratingCount">0</span>
+                    <button id="dislikeBtn">👎</button>
+                </div>
+            </div>
+        </div>
+        <!-- Модальное окно для добавления мема -->
+        <div class="modal" id="addMemeModal">
+            <div class="modal-content">
+                <span class="close" id="closeAddModal">×</span>
+                <h2>Добавить мем</h2>
+                <div class="add-meme-form">
+                    <input type="text" id="memeTitle" placeholder="Название мема" required>
+                    <input type="url" id="memeImage" placeholder="Ссылка на изображение" required>
+                    <select id="memeTag" required>
+                        <option value="" disabled selected>Выберите категорию</option>
+                        <option value="classic">Классика</option>
+                        <option value="animals">Животные</option>
+                        <option value="gaming">Гейминг</option>
+                        <option value="custom">Добавить свой тег</option>
+                    </select>
+                    <input type="text" id="memeCustomTag" placeholder="Введите свои теги (через запятую)" style="display: none;">
+                    <textarea id="memeDescription" rows="3" placeholder="Описание (необязательно)"></textarea>
+                    <textarea id="memeSource" rows="2" placeholder="Источник (необязательно)"></textarea>
+                    <button id="submitMemeBtn">Добавить</button>
+                </div>
+            </div>
+        </div>
+        <!-- Модальное окно для увеличенного изображения -->
+        <div class="modal" id="fullImageModal">
+            <span class="close" id="closeFullImageModal">×</span>
+            <img id="fullImage" src="" alt="Полноэкранный мем">
+        </div>
+        <!-- Модальное окно для пасхалки (Rickroll) -->
+        <div class="modal" id="easterModal">
+            <span class="close" id="closeEasterModal">×</span>
+            <video id="rickrollVideo" autoplay>
+                <source src="rickroll.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+        <!-- Модальное окно для тегов -->
+        <div class="modal" id="tagModal">
+            <div class="modal-content">
+                <span class="close" id="closeTagModal">×</span>
+                <h2>Выберите тег</h2>
+                <div id="tagList" class="tag-list"></div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
